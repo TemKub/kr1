@@ -90,3 +90,53 @@ function sumNumbers(n) {
     }
     console.log(sum);
 }
+
+//3.3 Обратный отсчет
+// Выведи числа от 20 до 1 в обратном порядке, используя цикл while. Выводи результаты в консоль.
+
+let i = 20;
+while (i >= 1) {
+    console.log(i);
+    i--;
+}
+
+//Задание 4: Работа с массивами
+// 4.1 Обработка оценок
+// Дан массив оценок:
+// const grades = [5, 4, 3, 5, 2, 4, 5];
+// Напиши код, который:
+// Выводит все оценки по одной
+// Вычисляет сумму всех оценок
+// Вычисляет среднюю оценку
+// Находит и выводит максимальную оценку
+
+const grades = [5, 4, 3, 5, 2, 4, 5];
+for (let i = 0; i < grades.length; i++) {
+    console.log(grades[i]);
+}
+
+let sum = 0;
+for (let i = 0; i < grades.length; i++) {
+sum = sum + grades[i];
+console.log(sum);
+}
+
+let max = grades[0];
+for (let i = 1; i < grades.length; i++) {
+    if (grades[i] > max) {
+        max = grades[i];
+    }
+}
+console.log(max);
+
+//4.2 Фильтрация четных чисел
+// Дан массив чисел:
+// const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// Напиши код, который выводит только четные числа из массива. Используй цикл for.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 === 0) {
+        console.log(numbers[i])
+    }
+}
