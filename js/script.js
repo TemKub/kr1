@@ -86,7 +86,7 @@ for (let i = 1; i <= 10; i++) {
 function sumNumbers(n) {
     let sum = 0;
     for (let i = 1; i <= n; i++) {
-        sum = sum + i;
+        sumNumbers = sumNumbers + i;
     }
     console.log(sum);
 }
@@ -140,3 +140,113 @@ for (let i = 0; i < numbers.length; i++) {
         console.log(numbers[i])
     }
 }
+
+//Задание 5: Объекты в JavaScript
+// 5.1 Объект студента
+// Создай объект student со свойствами:
+// name (строка)
+// age (число)
+// courses (массив с названиями курсов)
+// isActive (boolean)
+// Затем выполни:
+
+const student = {
+    name: "Kuba",
+    age: 28,
+    course: ["frontend", "Sales manager", "graphic design"],
+    isActive: true
+};
+console.log(student);
+
+student.age += 1;
+for (let i = 0; i < student.course.length; i++) {
+    console.log(student.course[i]);
+}
+
+//5.2 Объект товара
+// Создай объект product со свойствами: name, price, quantity
+// Напиши функцию getTotalCost(product), которая:
+// Принимает объект товара
+// Вычисляет стоимость (price × quantity)
+// Выводит результат
+
+const product = {
+    name: "Pocari sweet",
+    price: 50,
+    quantity: 5
+}
+
+function getTotalCost(product) {
+    console.log(product.price * product.quantity);
+}
+getTotalCost(product);
+
+//5.3 Массив объектов
+// Создай массив books с тремя объектами. Каждый объект имеет: title, author, year
+// Напиши код, который:
+// Выводит информацию о каждой книге
+// Находит и выводит самую старую книгу (по году)
+
+const books = [{
+    title: "Бумажная девушка",
+    author: "Гийом Мюссо",
+    year: 2012
+    },
+    {
+      title: "Охота на овец",
+      author: "Харуки Мураками",
+      year: 1982
+    },
+    {
+        title: "Кладбище домашних животных",
+        author: "Стивен Кинг",
+        year: 1983
+    }
+];
+console.log(books);
+
+
+//7.1 Список дел
+// Создай HTML страницу для списка дел:
+// Поле ввода (input) с id="taskInput"
+// Кнопка (button) с id="addBtn" и текстом "Добавить"
+// Элемент ul с id="taskList" для списка
+// Напиши JavaScript код:
+// При клике на кнопку берет текст из input
+// Добавляет новый элемент li в список
+// Очищает поле ввода после добавления
+
+const taskInput = document.querySelector("#taskInput");
+const addBtn = document.querySelector("#addBtn");
+const taskList = document.querySelector("#taskList");
+
+addBtn.addEventListener("click", function () {
+    const taskText = taskInput.value;
+    const li = document.createElement("li");
+    li.textContent = taskText;
+    taskList.appendChild(li);
+    taskInput.value = "";
+})
+
+//7.2 Переключатель темы
+// Создай HTML страницу с:
+// Кнопка (button) с id="themeBtn" и текстом "Темная тема"
+// Элемент body или div с id="mainContent"
+// Напиши JavaScript код:
+// При клике на кнопку изменяется фон (светлый/темный)
+// Текст кнопки меняется ("Светлая тема" или "Темная тема")
+// Можно менять цвет текста для контраста
+
+const mainContent = document.querySelector("#mainContent");
+const themeBtn = document.querySelector("#themeBtn");
+
+let isDark = false;
+themeBtn.addEventListener("click", function () {
+    if (isDark === false);
+    mainContent.style.backgroundColor = "#7c6b6b";
+    isDark = true;
+    addBtn.style.backgroundColor = "#ccc8b8";
+    themeBtn.style.backgroundColor = "#ccc8b8";
+    taskInput.style.color = "#000000FF";
+    taskInput.style.backgroundColor = "#e1b70e";
+})
